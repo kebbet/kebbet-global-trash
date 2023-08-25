@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kebbet plugins - Global trash for a site\n"
-"POT-Creation-Date: 2023-08-24 11:25+0200\n"
-"PO-Revision-Date: 2023-08-24 13:59+0200\n"
+"POT-Creation-Date: 2023-08-25 15:38+0200\n"
+"PO-Revision-Date: 2023-08-25 15:39+0200\n"
 "Last-Translator: Erik Betshammar <info@verkan.se>\n"
 "Language-Team: Erik Betshammar <info@verkan.se>\n"
 "Language: sv_SE\n"
@@ -20,100 +20,117 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: classes/class-kebbet-trash.php:27
+#: classes/class-kebbet-trash.php:30
 msgid "Trash item"
 msgstr "Objekt i papperskorg"
 
-#: classes/class-kebbet-trash.php:85
+#: classes/class-kebbet-trash.php:88
 #, php-format
 msgid "%s was restored to draft."
 msgstr "%s återställdes till utkast."
 
-#: classes/class-kebbet-trash.php:93
+#: classes/class-kebbet-trash.php:96
 msgid "One item deleted."
 msgstr "Ett objekt borttaget."
 
-#: classes/class-kebbet-trash.php:96
+#: classes/class-kebbet-trash.php:99
 #, php-format
 msgid "%s item deleted."
 msgstr "%s objekt borttagna."
 
-#: classes/class-kebbet-trash.php:102
+#: classes/class-kebbet-trash.php:105
 msgid "No items has been deleted."
 msgstr "Inga objekt har tagits bort."
 
-#: classes/class-kebbet-trash.php:174
+#: classes/class-kebbet-trash.php:177
 msgid "No trash items available."
 msgstr "Inga objekt i papperskorgen tillgängliga."
 
-#: classes/class-kebbet-trash.php:217
+#: classes/class-kebbet-trash.php:221
 msgid "Post has no title"
 msgstr "Inlägget har ingen rubrik"
 
-#: classes/class-kebbet-trash.php:260
+#: classes/class-kebbet-trash.php:239
+msgctxt "Date format for trash date"
+msgid "Y-m-d"
+msgstr "Y-m-d"
+
+#: classes/class-kebbet-trash.php:240
+msgctxt "Time format for trash date"
+msgid "H:i:s"
+msgstr "H:i:s"
+
+#. translators: 1: date. 2: time.
+#: classes/class-kebbet-trash.php:243
+#, php-format
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
+
+#: classes/class-kebbet-trash.php:285
 msgctxt "row action label"
 msgid "Delete permanently"
 msgstr "Ta bort permanent"
 
-#: classes/class-kebbet-trash.php:275
+#: classes/class-kebbet-trash.php:300
 msgctxt "row action label"
 msgid "Restore"
 msgstr "Återställ"
 
-#: classes/class-kebbet-trash.php:292
+#: classes/class-kebbet-trash.php:317
 msgctxt "Column header"
 msgid "Name"
 msgstr "Namn"
 
-#: classes/class-kebbet-trash.php:293
+#: classes/class-kebbet-trash.php:318
+msgctxt "Column header"
+msgid "Trash date"
+msgstr "Datum"
+
+#: classes/class-kebbet-trash.php:319
 msgctxt "Column header"
 msgid "Post type"
 msgstr "Inläggstyp"
 
-#: classes/class-kebbet-trash.php:294
+#: classes/class-kebbet-trash.php:320
 msgctxt "Column header"
 msgid "Actions"
 msgstr "Åtgärder"
 
-#: classes/class-kebbet-trash.php:330
+#: classes/class-kebbet-trash.php:356
 msgctxt "Bulk action"
 msgid "Delete"
 msgstr "Ta bort"
 
-#: classes/class-kebbet-trash.php:380
+#: classes/class-kebbet-trash.php:406
 msgid "Error: Nonce verification failed."
 msgstr "Fel: Nonce-verifiering misslyckades."
 
-#: classes/class-kebbet-trash.php:537
+#: classes/class-kebbet-trash.php:558
 msgid "All post types"
 msgstr "Alla inläggstyper"
 
 #. translators: %s: post type label
-#: classes/class-kebbet-trash.php:558
+#: classes/class-kebbet-trash.php:579
 #, php-format
 msgid "Empty trash for %s"
 msgstr "Töm papperskorg för %s"
 
-#: classes/class-kebbet-trash.php:573
+#: classes/class-kebbet-trash.php:594
 msgctxt "verb, to filter"
 msgid "Filter"
 msgstr "Filtrera"
 
-#: classes/class-kebbet-trash.php:591
+#: classes/class-kebbet-trash.php:612
 msgid "Empty trash for all post types"
 msgstr "Töm papperskorg för alla inläggstyper"
 
-#: classes/class-kebbet-trash.php:672 classes/class-kebbet-trash.php:673
-msgid "Trash"
-msgstr "Papperskorg"
-
-#: classes/class-kebbet-trash.php:689
+#: classes/class-plugin-loader.php:52 classes/class-plugin-loader.php:69
 msgid "Global trash"
 msgstr "Global papperskorg"
 
-#: classes/class-kebbet-trash.php:786
-msgid "Number of items"
-msgstr "Antal objekt"
+#: classes/class-plugin-loader.php:53
+msgid "Trash"
+msgstr "Papperskorg"
 
 #. Plugin Name of the plugin/theme
 msgid "Kebbet plugins - Global trash for a site"

@@ -67,12 +67,17 @@ class Plugin_Loader {
 		?>
 		<div class="wrap"><?php
 			echo '<h1 class="wp-heading-inline">' . __( 'Global trash', 'kebbet-global-trash' ). '</h1>';
-			?>
+			$number_of_posts = $this->trash_items_obj->record_count('');
+			$form_class      = 'not-empty';
+			if ( 0 === $number_of_posts ) {
+				$form_class = 'empty';
+			}
+?>
 			<div id="poststuff">
 				<div id="post-body" class="metabox-holder">
 					<div id="post-body-content">
 						<div class="meta-box-sortables ui-sortable">
-							<form method="post">
+							<form method="post" class="<?php echo $form_class; ?>">
 								<?php
 								$this->trash_items_obj->prepare_items();
 								$this->trash_items_obj->display(); ?>
@@ -114,6 +119,12 @@ class Plugin_Loader {
 			flex-wrap: wrap;
 			margin-bottom: .5rem;
 		}';
+		$custom_css .= $css_base . ' #poststuff {
+			padding-top: 0;
+		}';
+		$custom_css .= $css_base . ' .empty .tablenav.top {
+			display: none;
+		}';
 		$custom_css .= $css_base . ' .tablenav.top > * {
 			padding: 0;
 		}';
@@ -136,16 +147,23 @@ class Plugin_Loader {
 			flex-wrap: wrap;
 			flex-grow: 1;
 		}';
+		$custom_css .= $css_base . ' .kebbet-trash-table td.timestamp {
+			display:flex;
+			flex-direction: column;
+		}';
 		$custom_css .= $css_base . ' .kebbet-trash-table tr th:nth-child(1) {
 			width: 32px;
 		}';
 		$custom_css .= $css_base . ' .kebbet-trash-table tr th:nth-child(2) {
-			width: calc(100% - 322px);
+			width: calc(100% - 412px);
 		}';
 		$custom_css .= $css_base . ' .kebbet-trash-table tr th:nth-child(3) {
-			width: 110px;
+			width: 90px;
 		}';
 		$custom_css .= $css_base . ' .kebbet-trash-table tr th:nth-child(4) {
+			width: 110px;
+		}';
+		$custom_css .= $css_base . ' .kebbet-trash-table tr th:nth-child(5) {
 			width: 180px;
 		}';
 

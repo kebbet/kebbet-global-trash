@@ -16,5 +16,9 @@
 - [verkan.se](https://verkan.se)
 
 ## Changelog
+### 1.0.1 (2023-08-25)
+- Adds trash date column
+- Minor style adjustments to empty table.
+
 ### 1.0.0 (2023-08-24)
 - Initial release

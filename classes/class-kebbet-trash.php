@@ -189,6 +189,7 @@ class Kebbet_Global_Trash_List extends \WP_List_Table {
 		switch ( $column_name ) {
 			case 'actions':
 			case 'post_type':
+			case 'timestamp':
 				return $item[$column_name];
 			default:
 				return print_r( $item, true ); // Show the whole array for troubleshooting purposes
@@ -224,6 +225,27 @@ class Kebbet_Global_Trash_List extends \WP_List_Table {
 			}
 		}
 		return '<strong>' . $title . '</strong>';
+	}
+
+	/**
+	 * Method for time stamp column
+	 *
+	 * @param array $item Row item data.
+	 *
+	 * @return string
+	 */
+	function column_timestamp( $item ) {
+		$trash_date  = get_post_meta( $item['ID'], '_wp_trash_meta_time');
+		$date_format = _x( 'Y-m-d', 'Date format for trash date', 'kebbet-global-trash' );
+		$time_format = _x( 'H:i:s', 'Time format for trash date', 'kebbet-global-trash' );
+		$datetime    = sprintf(
+			/* translators: 1: date. 2: time. */
+			__( '%1$s %2$s', 'kebbet-global-trash' ),
+			'<span class="date">' . wp_date( $date_format, $trash_date['0'] ) . '</span>',
+			'<span class="time">' . wp_date( $time_format, $trash_date['0'] ) . '</span>',
+		);
+
+		return $datetime;
 	}
 
 	/**
@@ -293,6 +315,7 @@ class Kebbet_Global_Trash_List extends \WP_List_Table {
 		$columns = array(
 			'cb'        => '<input type="checkbox" />',
 			'name'      => _x( 'Name', 'Column header', 'kebbet-global-trash' ),
+			'timestamp' => _x( 'Trash date', 'Column header', 'kebbet-global-trash' ),
 			'post_type' => _x( 'Post type', 'Column header', 'kebbet-global-trash' ),
 			'actions'   => _x( 'Actions', 'Column header', 'kebbet-global-trash' ),
 		);
