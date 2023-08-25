@@ -4,7 +4,7 @@
  * Plugin URI:        https://github.com/kebbet/kebbet-global-trash
  * Description:       Adds a global trash to handle all items in trash.
  * Author:            Erik Betshammar
- * Version:           1.0.0
+ * Version:           1.0.1
  * Network:           true
  * Author URI:        https://verkan.se
  * Requires at least: 6.3
@@ -18,7 +18,7 @@
 
 namespace kebbet\global_trash;
 
-const KEBBET_GLOBAL_TRASH_VERSION = '1.0.0';
+const KEBBET_GLOBAL_TRASH_VERSION = '1.0.1';
 /**
  * Hook into the 'init' action
  */
