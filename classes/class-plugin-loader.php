@@ -67,12 +67,17 @@ class Plugin_Loader {
 		?>
 		<div class="wrap"><?php
 			echo '<h1 class="wp-heading-inline">' . __( 'Global trash', 'kebbet-global-trash' ). '</h1>';
-			?>
+			$number_of_posts = $this->trash_items_obj->record_count('');
+			$form_class      = 'not-empty';
+			if ( 0 === $number_of_posts ) {
+				$form_class = 'empty';
+			}
+?>
 			<div id="poststuff">
 				<div id="post-body" class="metabox-holder">
 					<div id="post-body-content">
 						<div class="meta-box-sortables ui-sortable">
-							<form method="post">
+							<form method="post" class="<?php echo $form_class; ?>">
 								<?php
 								$this->trash_items_obj->prepare_items();
 								$this->trash_items_obj->display(); ?>
@@ -113,6 +118,12 @@ class Plugin_Loader {
 			gap: 0.5rem 1rem;
 			flex-wrap: wrap;
 			margin-bottom: .5rem;
+		}';
+		$custom_css .= $css_base . ' #poststuff {
+			padding-top: 0;
+		}';
+		$custom_css .= $css_base . ' .empty .tablenav.top {
+			display: none;
 		}';
 		$custom_css .= $css_base . ' .tablenav.top > * {
 			padding: 0;
