@@ -147,16 +147,23 @@ class Plugin_Loader {
 			flex-wrap: wrap;
 			flex-grow: 1;
 		}';
+		$custom_css .= $css_base . ' .kebbet-trash-table td.timestamp {
+			display:flex;
+			flex-direction: column;
+		}';
 		$custom_css .= $css_base . ' .kebbet-trash-table tr th:nth-child(1) {
 			width: 32px;
 		}';
 		$custom_css .= $css_base . ' .kebbet-trash-table tr th:nth-child(2) {
-			width: calc(100% - 322px);
+			width: calc(100% - 412px);
 		}';
 		$custom_css .= $css_base . ' .kebbet-trash-table tr th:nth-child(3) {
-			width: 110px;
+			width: 90px;
 		}';
 		$custom_css .= $css_base . ' .kebbet-trash-table tr th:nth-child(4) {
+			width: 110px;
+		}';
+		$custom_css .= $css_base . ' .kebbet-trash-table tr th:nth-child(5) {
 			width: 180px;
 		}';
 
