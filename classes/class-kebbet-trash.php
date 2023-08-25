@@ -235,10 +235,10 @@ class Kebbet_Global_Trash_List extends \WP_List_Table {
 	 * @return string
 	 */
 	function column_timestamp( $item ) {
-		$trash_date = get_post_meta( $item['ID'], '_wp_trash_meta_time');
+		$trash_date  = get_post_meta( $item['ID'], '_wp_trash_meta_time');
 		$date_format = _x( 'Y-m-d', 'Date format for trash date', 'kebbet-global-trash' );
 		$time_format = _x( 'H:i:s', 'Time format for trash date', 'kebbet-global-trash' );
-		$datetime   = sprintf(
+		$datetime    = sprintf(
 			/* translators: 1: date. 2: time. */
 			__( '%1$s %2$s', 'kebbet-global-trash' ),
 			'<span class="date">' . wp_date( $date_format, $trash_date['0'] ) . '</span>',
